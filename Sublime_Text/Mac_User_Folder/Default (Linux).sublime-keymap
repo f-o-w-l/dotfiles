@@ -1,0 +1,204 @@
+[
+  // *************
+  // FILE MOVEMENT
+
+  // - Tab selection
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+  { "keys": ["ctrl+1"], "command": "select_by_index", "args": { "index": 0 } },
+  { "keys": ["ctrl+2"], "command": "select_by_index", "args": { "index": 1 } },
+  { "keys": ["ctrl+3"], "command": "select_by_index", "args": { "index": 2 } },
+  { "keys": ["ctrl+4"], "command": "select_by_index", "args": { "index": 3 } },
+  { "keys": ["ctrl+5"], "command": "select_by_index", "args": { "index": 4 } },
+  { "keys": ["ctrl+6"], "command": "select_by_index", "args": { "index": 5 } },
+  { "keys": ["ctrl+7"], "command": "select_by_index", "args": { "index": 6 } },
+  { "keys": ["ctrl+8"], "command": "select_by_index", "args": { "index": 7 } },
+  { "keys": ["ctrl+9"], "command": "select_by_index", "args": { "index": 8 } },
+  { "keys": ["ctrl+0"], "command": "select_by_index", "args": { "index": 9 } },
+
+  // - Group focusing
+  { "keys": ["alt+1"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["alt+2"], "command": "focus_group", "args": { "group": 1 } },
+  { "keys": ["alt+3"], "command": "focus_group", "args": { "group": 2 } },
+  { "keys": ["alt+4"], "command": "focus_group", "args": { "group": 3 } },
+
+  // - Search file's functions and classes
+  { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+  // - Search open folder's files
+  { "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true }},
+
+  // *********************
+  // ARROW KEYS - MOVEMENT
+
+  // - Jump from words
+  { "keys": ["ctrl+left"], "command": "move", "args": {"by": "words", "forward": false }},
+  { "keys": ["ctrl+right"], "command": "move", "args": {"by": "word_ends", "forward": true }},
+  // - Scrolling
+  { "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1 } },
+  { "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1 } },
+
+  // **********************
+  // ARROW KEYS - SELECTION
+
+  // - Character selection
+  { "keys": ["shift+left"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true }},
+  { "keys": ["shift+right"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true }},
+  // - Word selection
+  { "keys": ["ctrl+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true }},
+  { "keys": ["ctrl+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true }},
+  // - EOL/BOL selection
+  { "keys": ["alt+shift+right"], "command": "select_to_endofline" },
+  { "keys": ["alt+shift+left"], "command": "select_to_begofline" },
+  // - Line selection
+  { "keys": ["shift+up"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true }},
+  { "keys": ["shift+down"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true }},
+
+  // *****************
+  // ARROW KEYS - MISC
+
+  // - Line swapping
+  { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
+  { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
+
+  // - Line by line selection
+  { "keys": ["ctrl+alt+up"], "command": "select_lines", "args": {"forward": false }},
+  { "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true }},
+
+  // **************
+  // KEYBOARD - RHS
+
+  // - Undo
+  { "keys": ["ctrl+u"], "command": "soft_undo" },
+
+  // - Movement
+  { "keys": ["ctrl+j"], "command": "move", "args": {"by": "characters", "forward": false }},
+  { "keys": ["ctrl+k"], "command": "move", "args": {"by": "characters", "forward": true }},
+  { "keys": ["ctrl+i"], "command": "move", "args": {"by": "lines", "forward": false }},
+  { "keys": ["ctrl+l"], "command": "move", "args": {"by": "lines", "forward": true }},
+  { "keys": ["ctrl+shift+j"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true }},
+  { "keys": ["ctrl+shift+k"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true }},
+  { "keys": ["ctrl+shift+i"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true }},
+  { "keys": ["ctrl+shift+l"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true }},
+  { "keys": ["alt+j"], "command": "move", "args": {"by": "words", "forward": false }},
+  { "keys": ["alt+k"], "command": "move", "args": {"by": "word_ends", "forward": true }},
+  { "keys": ["alt+shift+j"], "command": "move", "args": {"by": "words", "forward": false, "extend": true }},
+  { "keys": ["alt+shift+k"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true }},
+
+  // - Expand selection by region
+  { "keys": ["ctrl+m"], "command": "expand_region" },
+  // - Select all occurrances
+  { "keys": ["ctrl+shift+m"], "command": "find_all_under" },
+  // - Expand selection to tag
+  { "keys": ["ctrl+h"], "command": "expand_selection", "args": {"to": "tag"} },
+
+  // - Jump and select between brackets
+  { "keys": ["ctrl+."], "command": "move_to", "args": {"to": "brackets"} },
+  { "keys": ["ctrl+shift+."], "command": "expand_selection", "args": {"to": "brackets"} },
+
+  // - Expand selection by next occurrance
+  { "keys": ["ctrl+,"], "command": "find_under_expand" }, 
+  { "keys": ["ctrl+shift+,"], "command": "find_under_expand_skip" },
+
+  // - Select line
+  { "keys": ["ctrl+;"], "command": "expand_selection", "args": {"to": "line"} },
+  // - Split selection by lines
+  { "keys": ["ctrl+shift+;"], "command": "split_selection_into_lines" },
+
+  // - Backwards backspace
+  { "keys": ["ctrl+backspace"], "command": "right_delete" },
+
+  // - Join lines
+  { "keys": ["ctrl+space"], "command": "join_lines" },
+
+  // **************
+  // KEYBOARD - LHS
+
+  // - Jump to BOL/EOL
+  { "keys": ["ctrl+d"], "command": "move_to", "args": {"to": "bol", "extend": false}},
+  { "keys": ["ctrl+f"], "command": "move_to", "args": {"to": "eol", "extend": false}},
+  { "keys": ["ctrl+shift+d"], "command": "move_to", "args": {"to": "bol", "extend": true}},
+  { "keys": ["ctrl+shift+f"], "command": "move_to", "args": {"to": "eol", "extend": true}},
+  
+  // - Find
+  { "keys": ["alt+g"], "command": "show_panel", "args": {"panel": "find", "reverse": false }},
+  { "keys": ["alt+shift+g"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+
+  // - Next bookmark
+  { "keys": ["ctrl+shift+9"], "command": "next_bookmark" },
+  // - Toggle bookmark
+  { "keys": ["ctrl+9"], "command": "toggle_bookmark" },
+
+  // - Paste respecting indent
+  { "keys": ["ctrl+shift+v"], "command": "paste_and_indent" },
+
+  // - Toggle sidebar
+  { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+
+  // - Save as
+  { "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
+
+  {"keys": ["tab"], "command": "expand_abbreviation_by_tab", "context":
+    [
+      { "operand": "source.js", "operator": "equal", "match_all": true, "key": "selector" },
+      { "match_all": true, "key": "selection_empty" },
+      { "operator": "equal", "operand": false, "match_all": true, "key": "has_next_field" },
+      { "operand": false, "operator": "equal", "match_all": true, "key": "auto_complete_visible" },
+      { "match_all": true, "key": "is_abbreviation" }
+    ]
+  },
+
+  // Layout
+  {
+    "keys": ["ctrl+alt+1"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1]]
+    }
+  },
+  {
+    "keys": ["ctrl+alt+2"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.5, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+    }
+  },
+  {
+    "keys": ["ctrl+alt+3"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.33, 0.66, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+    }
+  },
+  {
+    "keys": ["ctrl+alt+4"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+    }
+  },
+
+  // Plugins: LiveReload + MarkdownPreview
+  {
+      "keys": ["ctrl+h"],
+      "command": "chain",
+      "args": {
+          "commands": [
+              [ "live_reload_config_plugin", { "plugin": "SimpleRefreshDelay", "operation": "enable" } ],
+              [ "markdown_preview", { "target": "browser", "parser": "markdown" } ],
+          ],
+      },
+      "context": [ { "key": "selector", "operator": "equal", "operand": "text.html.markdown" } ],
+  },
+]
