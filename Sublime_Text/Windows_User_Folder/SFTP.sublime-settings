@@ -1,0 +1,10 @@
+{
+	"sync_down_on_open": true,
+    "sync_same_age": true,
+    "hide_output_panel": 1.5,
+    "monitoring_upload_delay": 20,
+    "upload_on_save": true,
+    "confirm_downloads": true,
+    "confirm_overwrite_newer": true,
+    "confirm_sync": true
+}

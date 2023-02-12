@@ -1,0 +1,48 @@
+{
+  "workbench.editor.closeEmptyGroups": false,
+  "prettier.requireConfig": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "editor.tabSize": 2,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.log": "off",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "workbench.editorAssociations": {
+    "*.stl": "3dviewer.viewer"
+  },
+  "editor.find.cursorMoveOnType": false,
+  "yaml.schemas": {
+    "file:///Users/lukefowler/.vscode-oss/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "todo-tree.tree.showScanModeButton": false,
+  "eslint.runtime": "/Users/lukefowler/.asdf/installs/nodejs/17.0.1",
+  "atlascode.jira.jqlList": [
+    {
+      "id": "41d3e285-8ea4-4761-9790-d861a8d07af8",
+      "enabled": true,
+      "name": "My acretrader Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "siteId": "f4bb036b-63d0-4c1c-affc-4d5354196a42",
+      "monitor": true
+    }
+  ],
+  "atlascode.bitbucket.enabled": false,
+  "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}/{{{issueKey}}}_{{{summary}}}",
+  "window.zoomLevel": -1,
+  "files.associations": {
+    "*.vue": "jade"
+  },
+  "atlascode.jira.startWorkBranchTemplate.customPrefixes": [
+    "feature",
+    "fix",
+    "enhancement",
+    "doc",
+    "ci"
+  ]
+}

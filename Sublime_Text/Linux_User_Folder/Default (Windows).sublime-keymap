@@ -1,0 +1,106 @@
+[
+	// ******** FILE MOVEMENT
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+	{ "keys": ["ctrl+1"], "command": "select_by_index", "args": { "index": 0 } },
+	{ "keys": ["ctrl+2"], "command": "select_by_index", "args": { "index": 1 } },
+	{ "keys": ["ctrl+3"], "command": "select_by_index", "args": { "index": 2 } },
+	{ "keys": ["ctrl+4"], "command": "select_by_index", "args": { "index": 3 } },
+	{ "keys": ["ctrl+5"], "command": "select_by_index", "args": { "index": 4 } },
+	{ "keys": ["ctrl+6"], "command": "select_by_index", "args": { "index": 5 } },
+	{ "keys": ["ctrl+7"], "command": "select_by_index", "args": { "index": 6 } },
+	{ "keys": ["ctrl+8"], "command": "select_by_index", "args": { "index": 7 } },
+	{ "keys": ["ctrl+9"], "command": "select_by_index", "args": { "index": 8 } },
+	{ "keys": ["ctrl+0"], "command": "select_by_index", "args": { "index": 9 } },
+
+	{ "keys": ["alt+1"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["alt+2"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["alt+3"], "command": "focus_group", "args": { "group": 2 } },
+	{ "keys": ["alt+4"], "command": "focus_group", "args": { "group": 3 } },
+	{ "keys": ["alt+5"], "command": "focus_group", "args": { "group": 4 } },
+	{ "keys": ["alt+6"], "command": "focus_group", "args": { "group": 5 } },
+	{ "keys": ["alt+7"], "command": "focus_group", "args": { "group": 6 } },
+	{ "keys": ["alt+8"], "command": "focus_group", "args": { "group": 7 } },
+	{ "keys": ["alt+9"], "command": "focus_group", "args": { "group": 8 } },
+	{ "keys": ["alt+0"], "command": "focus_group", "args": { "group": 9 } },
+
+	// **** search and open any file, search functions and classes within a file
+	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{ "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+
+	// **** prompt save as
+	{ "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
+
+	// ******** ARROW KEYS
+	// **** movement
+	{ "keys": ["ctrl+left"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["ctrl+right"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0 } },
+	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+	// ** LR selection
+	{ "keys": ["shift+left"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
+	{ "keys": ["shift+right"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
+	// * LR jumping selection
+	{ "keys": ["ctrl+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+	// ** UD selection
+	{ "keys": ["shift+up"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+	{ "keys": ["shift+down"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+
+	// **** line swapping
+	{ "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
+
+	// **** expand multiple selections
+	{ "keys": ["ctrl+alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+	// ******** RHS
+	// **** select region
+	{ "keys": ["ctrl+j"], "command": "expand_region" },
+	// { "keys": ["ctrl+u"], "command": "expand_region", "args": {"undo": true}, "context": [{ "key": "expand_region_soft_undo" }] },
+	// ** select next
+	{ "keys": ["ctrl+m"], "command": "find_under_expand" },
+	// ** skip selected
+	{ "keys": ["ctrl+shift+m"], "command": "find_under_expand_skip" },
+	// ** select all under
+	{ "keys": ["ctrl+shift+j"], "command": "find_all_under" },
+
+	// **** move to brackets
+	{ "keys": ["ctrl+k"], "command": "move_to", "args": {"to": "brackets"} },
+	// ** select in brackets
+	{ "keys": ["ctrl+shift+k"], "command": "expand_selection", "args": {"to": "brackets"} },
+
+	// **** select line
+	{ "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
+	// ** split selection into lines
+	{ "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
+
+	// **** delete from right
+	{ "keys": ["ctrl+backspace"], "command": "right_delete" },
+
+	// **** join lines
+	{ "keys": ["ctrl+space"], "command": "join_lines" },
+
+	// ******** LHS
+	// **** duplicate
+	{ "keys": ["ctrl+d"], "command": "duplicate_line" },
+	
+	// **** line movement
+	{ "keys": ["ctrl+q"], "command": "move_to", "args": {"to": "bol", "extend": false}},
+	{ "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false}},
+	{ "keys": ["ctrl+shift+q"], "command": "move_to", "args": {"to": "bol", "extend": true}},
+	{ "keys": ["ctrl+shift+e"], "command": "move_to", "args": {"to": "eol", "extend": true}},
+	
+	// **** next bookmark
+	{ "keys": ["ctrl+shift+i"], "command": "next_bookmark" },
+	// **** toggle bookmark
+	{ "keys": ["ctrl+i"], "command": "toggle_bookmark" },
+
+	// **** paste respecting indent
+	{ "keys": ["ctrl+shift+v"], "command": "paste_and_indent" },
+
+	// toggle sidebar
+	{ "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+]

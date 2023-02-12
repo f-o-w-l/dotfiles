@@ -1,0 +1,86 @@
+# Filesystem browsing
+alias ls='exa --classify --header --all --git --long'
+alias ll='exa --classify --header --all --git --long'
+alias la='exa --classify --header --all --git --long --sort date --reverse'
+alias lt='exa --classify --header --all --git --long --tree'
+alias tg='lt | grep '
+alias c='clear'
+alias cl='c && ll'
+alias ca='c && la'
+alias l='ls'
+
+# Filesystem general
+alias whence='type -a'
+alias grep='grep --color'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias df='df -h'
+if [ $(uname -s) = "Darwin" ]; then
+    alias du='ncdu'
+else
+    alias du='ncdu2'
+fi
+alias pst='pstree -u $USER'
+alias psg='pst | grep '
+
+# SSH
+alias church='autossh -M 0 {$SSHUSER}@church.csce.uark.edu'
+alias turing='autossh -M 0 {$SSHUSER}@turing.csce.uark.edu'
+
+# Programs
+alias less='less -r'
+alias g++='g++ -std=c++11 -Wall'
+alias ns='nordvpn status'
+alias dm='docker-machine'
+alias dps='docker ps -a'
+alias dsra='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+alias dbu='docker-compose build && docker-compose up -d'
+alias drmi='docker rmi $(docker images -a --filter=dangling=true -q) && docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+function dip() {
+    docker inspect $1 | grep IPAddress
+}
+
+# Git
+alias cg='cl && git status'
+alias ga='git add'
+alias gau='git add --update'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gcm='git commit --message'
+# marks and prefixes comment as fix-up. combine
+# with `gr -i --autosquash <last commit to retain>` to merge (rebase) fixups
+alias gcf='git commit --fixup'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcot='git checkout --track'
+alias gcom='git checkout main'
+alias gcon='git checkout next'
+alias gcod='git checkout dev'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull --no-rebase'
+alias gpr='git pull --rebase'
+alias gpf='git pull --ff-only'
+alias gr='git rebase'
+alias gres='git reset'
+alias gresh='git reset HEAD'
+alias grm='git rm'
+alias grs='git restore'
+alias grss='git restore --staged'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'

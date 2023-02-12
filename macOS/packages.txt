@@ -1,0 +1,5 @@
+dropbox
+exa
+asdf
+postgres
+golang

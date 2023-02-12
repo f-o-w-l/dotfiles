@@ -1,0 +1,52 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"ApplySyntax",
+		"AutoSelect",
+		"BracketGuard",
+		"BracketHighlighter",
+		"Case Conversion",
+		"Clang Format",
+		"Color Highlighter",
+		"Colorsublime",
+		"CSS3",
+		"CTags",
+		"Default File Type",
+		"EditorConfig",
+		"Emoji",
+		"ExpandRegion",
+		"Git",
+		"GraphQL",
+		"Hasher",
+		"Highlighter",
+		"InsertDate",
+		"MarkdownPreview",
+		"MIPS Syntax",
+		"naomi-syntax",
+		"Package Control",
+		"PackageResourceViewer",
+		"SFTP",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-gcc",
+		"SublimeLinter-pydocstyle",
+		"SublimeLinter-pylint",
+		"Table Editor",
+		"Text Pastry",
+		"Twig",
+		"TypeScript",
+		"VHDL",
+		"YcmdCompletion"
+	],
+	"repositories":
+	[
+		"https://github.com/tushortz/JavaIME"
+	],
+	"show_panel_on_save": "window",
+}

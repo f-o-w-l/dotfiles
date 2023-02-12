@@ -1,0 +1,43 @@
+{
+  "workbench.editor.closeEmptyGroups": false,
+  "prettier.requireConfig": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.untitled.hint": "hidden",
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "editor.tabSize": 2,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.log": "off",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "yaml.schemas": {
+    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "redhat.telemetry.enabled": false,
+  "editor.find.cursorMoveOnType": false,
+  "atlascode.outputLevel": "debug",
+  "atlascode.bitbucket.enabled": true,
+  "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}/{{{issueKey}}}_{{{summary}}}",
+  "atlascode.jira.startWorkBranchTemplate.customPrefixes": [
+    "ci",
+    "doc",
+    "feat",
+    "fix",
+    "perf",
+    "style"
+  ],
+  "explorer.confirmDelete": false,
+  "tailwindCSS.lint.recommendedVariantOrder": "error",
+  "files.associations": {
+    ".env": "plaintext"
+  },
+  "omnisharp.useModernNet": false,
+  "playwright.reuseBrowser": true,
+  "deno.enablePaths": [
+    "supabase/functions"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true
+}
