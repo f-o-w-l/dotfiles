@@ -13,7 +13,7 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "yaml.schemas": {
-    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "redhat.telemetry.enabled": false,
   "editor.find.cursorMoveOnType": false,
@@ -39,11 +39,11 @@
     "supabase/functions"
   ],
   "explorer.confirmDragAndDrop": false,
-  "editor.formatOnSave": true,
   "git.openRepositoryInParentFolders": "always",
   "[python]": {
     "editor.formatOnType": true
   },
   "python.analysis.typeCheckingMode": "basic",
-  "telemetry.telemetryLevel": "crash"
+  "telemetry.telemetryLevel": "crash",
+  "editor.formatOnSave": true
 }
