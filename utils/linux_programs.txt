@@ -1,0 +1,49 @@
+7zz
+7zzs
+act
+bfg-1.14.0.jar
+exa
+feh
+git-lfs
+ncdu2
+firefox
+foxglove
+code
+ros
+unityhub
+zsh
+
+flatpak:
+  Remote Touchpad
+  OBS Studio
+  Chromium Web Browser
+  Codecs
+  Freedesktop Platform
+  Mesa
+  Mesa (Extra)
+  nvidia-525-85-05
+  Intel
+  openh264
+  Freedesktop SDK
+  GNU Image Manipulation …
+  GNOME Application Platf…
+  Pop Gtk theme
+  KDE Application Platform
+  KDE Application Platform
+  QGnomePlatform
+  QGnomePlatform
+  QGnomePlatform-decorati… …dDecoration.QGnomePlatform-decoration
+  QGnomePlatform-decorati… …dDecoration.QGnomePlatform-decoration
+  VLC
+
+asdf:
+  deno
+  nodejs
+  pnpm
+  python
+
+pnpm -g:
+  @types/node
+  ts-node
+  typescript
+  yarn
