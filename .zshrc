@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=/home/fowl/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/fowl/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,12 +74,12 @@ source /opt/ros/noetic/setup.zsh
 fpath=(${ASDF_DIR}/completions $fpath)
 
 # Initialize asdf
-. $HOME/.asdf/asdf.sh
+. /home/fowl/.asdf/asdf.sh
 # . /opt/asdf-vm/asdf.sh
 
 # Source SSH settings, if applicable
 export SSHUSER="fowl"
-SSH_ENV="$HOME/.ssh/environment-$(hostname)"
+SSH_ENV="/home/fowl/.ssh/environment-$(hostname)"
 
 function start_agent {
     echo "Initialising new SSH agent..."

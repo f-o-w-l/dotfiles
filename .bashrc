@@ -18,7 +18,7 @@ if [ -s /.prod.aliases -a -r ~/.prod.aliases ]; then
 fi
 
 export SSHUSER="olfowler"
-SSH_ENV="$HOME/.ssh/agent-environment"
+SSH_ENV="/home/fowl/.ssh/agent-environment"
 
 function start_agent {
     echo "Initialising new SSH agent..."
@@ -54,9 +54,9 @@ export CLICOLOR=1
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
 export PATH=$PATH:/opt/arcanist/bin
-export PATH=$PATH:$HOME/anaconda3/bin
+export PATH=$PATH:/home/fowl/anaconda3/bin
 
-export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
+export PATH=$PATH:/home/fowl/.yarn/bin:/home/fowl/.config/yarn/global/node_modules/.bin
 
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
