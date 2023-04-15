@@ -20,12 +20,11 @@ if [ $(uname -s) = "Darwin" ]; then
 else
     alias du='ncdu2'
 fi
-alias pst='pstree -u $USER'
 alias psg='pst | grep '
-
-# SSH
-alias church='autossh -M 0 {$SSHUSER}@church.csce.uark.edu'
-alias turing='autossh -M 0 {$SSHUSER}@turing.csce.uark.edu'
+# delete empty dirs
+alias ded='find . -type d -empty -print0 | xargs -0 -I {} /bin/rm -r "{}"'
+# delete images
+alias dim="find -type f \( -iname '*.jp*g' -or -iname '*.png' \) -delete"
 
 # Programs
 alias less='less -r'
@@ -39,6 +38,25 @@ alias drmi='docker rmi $(docker images -a --filter=dangling=true -q) && docker r
 function dip() {
     docker inspect $1 | grep IPAddress
 }
+
+# System
+alias pst='pstree -cglpst -C age'
+alias pstu='pst -u $USER'
+function restart_audio() {
+    systemctl --user restart pulseaudio
+    rm -r ~/.config/pulse
+    pulseaudio -k
+}
+function setup_tv_monitor() {
+    xrandr \
+        --fb 3840x2280 \
+        --output eDP-1-1 --primary --mode 1920x1200 --pos 0x0 --rate 60 \
+        --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1 --rate 60
+}
+
+# SSH
+alias church='autossh -M 0 {$SSHUSER}@church.csce.uark.edu'
+alias turing='autossh -M 0 {$SSHUSER}@turing.csce.uark.edu'
 
 # Git
 alias cg='cl && git status'
