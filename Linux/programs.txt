@@ -2,14 +2,16 @@
 7zzs
 act
 bfg-1.14.0.jar
+code
 exa
 feh
-git-lfs
-ncdu2
 firefox
 foxglove
-code
+git-lfs
+ncdu2
+quarterwindows
 ros
+rust/cargo
 unityhub
 zsh
 

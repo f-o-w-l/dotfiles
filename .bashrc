@@ -79,4 +79,6 @@ unset __conda_setup
 
 [ -s "/home/fowl/.jabba/jabba.sh" ] && source "/home/fowl/.jabba/jabba.sh"
 
+. "$HOME/.cargo/env"
+
 zsh

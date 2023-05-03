@@ -138,3 +138,5 @@ cl
 export PNPM_HOME="/home/fowl/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+. "$HOME/.cargo/env"
