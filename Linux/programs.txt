@@ -6,6 +6,7 @@ code
 exa
 feh
 firefox
+flameshot
 foxglove
 git-lfs
 ncdu2
