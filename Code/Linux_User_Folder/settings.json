@@ -45,5 +45,7 @@
   },
   "python.analysis.typeCheckingMode": "basic",
   "telemetry.telemetryLevel": "crash",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.snippetSuggestions": "bottom",
+  "emmet.showSuggestionsAsSnippets": true
 }
