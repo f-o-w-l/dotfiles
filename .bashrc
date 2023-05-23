@@ -10,14 +10,14 @@
 # bind TAB:menu-complete
 
 if [ -s ~/.aliases -a -r ~/.aliases ]; then
-	source ~/.aliases
+    source ~/.aliases
 fi
 
 if [ -s /.prod.aliases -a -r ~/.prod.aliases ]; then
     source ~/.prod.aliases
 fi
 
-export SSHUSER="olfowler"
+export SSHUSER="fowl.software"
 SSH_ENV="/home/fowl/.ssh/agent-environment"
 
 function start_agent {
