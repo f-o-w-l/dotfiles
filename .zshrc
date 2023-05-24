@@ -140,3 +140,4 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 . "$HOME/.cargo/env"
+. "$HOME/ros/devel/setup.sh"
