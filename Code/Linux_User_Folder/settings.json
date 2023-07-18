@@ -31,7 +31,9 @@
   "explorer.confirmDelete": false,
   "tailwindCSS.lint.recommendedVariantOrder": "error",
   "files.associations": {
-    ".env": "plaintext"
+    ".env": "plaintext",
+    "*.graphql": "graphql",
+    "*.vtl": "velocity"
   },
   "omnisharp.useModernNet": false,
   "playwright.reuseBrowser": true,
@@ -47,5 +49,9 @@
   "telemetry.telemetryLevel": "crash",
   "editor.formatOnSave": true,
   "editor.snippetSuggestions": "bottom",
-  "emmet.showSuggestionsAsSnippets": true
+  "emmet.showSuggestionsAsSnippets": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[json5]": {}
 }
