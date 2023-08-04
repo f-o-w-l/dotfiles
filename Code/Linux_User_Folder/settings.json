@@ -13,7 +13,7 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "yaml.schemas": {
-    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.4/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "redhat.telemetry.enabled": false,
   "editor.find.cursorMoveOnType": false,
