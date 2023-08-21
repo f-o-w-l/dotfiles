@@ -116,24 +116,6 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/fowl/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/fowl/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/fowl/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/fowl/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-# Run cl on load
-cl
-
 # pnpm
 export PNPM_HOME="/home/fowl/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -141,3 +123,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 . "$HOME/.cargo/env"
 . "$HOME/ros/devel/setup.sh"
+export PYTHONPATH="$PYTHONPATH:/usr/lib/python3/dist-packages/"
+
+# Run cl on load
+cl
