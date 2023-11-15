@@ -346,11 +346,6 @@
     "command": "workbench.view.search.focus"
   },
   {
-    "key": "shift+alt+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
     "key": "ctrl+shift+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
@@ -1839,5 +1834,9 @@
   {
     "key": "ctrl+alt+1",
     "command": "workbench.action.editorLayoutSingle"
+  },
+  {
+    "key": "shift+alt+g",
+    "command": "pr:github.focus"
   }
 ]
