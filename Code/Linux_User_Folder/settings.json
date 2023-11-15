@@ -2,7 +2,6 @@
   "workbench.editor.closeEmptyGroups": false,
   "prettier.requireConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.editor.untitled.hint": "hidden",
   "files.defaultLanguage": "${activeEditorLanguage}",
   "editor.tabSize": 2,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -60,5 +59,7 @@
     },
     "editor.suggest.insertMode": "replace"
   },
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
+  "git.autofetch": true,
+  "githubIssues.issueBranchTitle": "${user}/#${issueNumber}-${sanitizedIssueTitle}"
 }
