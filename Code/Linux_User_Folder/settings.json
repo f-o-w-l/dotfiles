@@ -12,7 +12,7 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "yaml.schemas": {
-    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/fowl/.vscode/extensions/atlassian.atlascode-3.0.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "redhat.telemetry.enabled": false,
   "editor.find.cursorMoveOnType": false,
@@ -61,5 +61,8 @@
   },
   "workbench.editor.empty.hint": "hidden",
   "git.autofetch": true,
-  "githubIssues.issueBranchTitle": "${user}/#${issueNumber}-${sanitizedIssueTitle}"
+  "githubIssues.issueBranchTitle": "${user}/#${issueNumber}-${sanitizedIssueTitle}",
+  "githubPullRequests.pullBranch": "never",
+  "files.autoSave": "afterDelay",
+  "window.zoomLevel": 4
 }
