@@ -123,7 +123,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 . "$HOME/.cargo/env"
 . "$HOME/ros/devel/setup.sh"
-export PYTHONPATH="$PYTHONPATH:/usr/lib/python3/dist-packages/"
+# export PYTHONPATH="$PYTHONPATH:/usr/lib/python3/dist-packages/"
 
 # Run cl on load
 cl
