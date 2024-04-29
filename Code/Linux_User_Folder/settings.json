@@ -63,5 +63,8 @@
   "git.autofetch": true,
   "githubIssues.issueBranchTitle": "${user}/#${issueNumber}-${sanitizedIssueTitle}",
   "githubPullRequests.pullBranch": "never",
-  "window.zoomLevel": 4
+  "window.zoomLevel": 4,
+  "[xml]": {
+    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  }
 }

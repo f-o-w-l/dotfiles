@@ -9,34 +9,21 @@ firefox
 flameshot
 foxglove
 git-lfs
+GitKraken
+jq
 ncdu2
 quarterwindows
 ros
 rust/cargo
+slack
 unityhub
 zsh
 
 flatpak:
   Remote Touchpad
-  OBS Studio
-  Chromium Web Browser
-  Codecs
-  Freedesktop Platform
-  Mesa
-  Mesa (Extra)
-  nvidia-525-85-05
-  Intel
-  openh264
-  Freedesktop SDK
-  GNU Image Manipulation …
-  GNOME Application Platf…
-  Pop Gtk theme
-  KDE Application Platform
-  KDE Application Platform
-  QGnomePlatform
-  QGnomePlatform
-  QGnomePlatform-decorati… …dDecoration.QGnomePlatform-decoration
-  QGnomePlatform-decorati… …dDecoration.QGnomePlatform-decoration
+  OBS Studio - com.obsproject.Studio
+  Ungoogled Chromium - io.github.ungoogled_software.ungoogled_chromium
+  GNU Image Manipulation
   VLC
 
 asdf:
