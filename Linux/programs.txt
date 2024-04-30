@@ -11,6 +11,7 @@ foxglove
 git-lfs
 GitKraken
 jq
+lm-sensors
 ncdu2
 quarterwindows
 ros
