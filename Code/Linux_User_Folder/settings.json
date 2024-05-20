@@ -61,7 +61,7 @@
   },
   "workbench.editor.empty.hint": "hidden",
   "git.autofetch": true,
-  "githubIssues.issueBranchTitle": "${user}/#${issueNumber}-${sanitizedIssueTitle}",
+  "githubIssues.issueBranchTitle": "${issueNumber}-${sanitizedIssueTitle}",
   "githubPullRequests.pullBranch": "never",
   "window.zoomLevel": 4,
   "[xml]": {
