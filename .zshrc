@@ -121,6 +121,5 @@ export PNPM_HOME="/home/fowl/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-. "$HOME/.cargo/env"
 . "$HOME/ros/devel/setup.sh"
 export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"
