@@ -123,3 +123,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 . "$HOME/ros/devel/setup.sh"
 export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"
+
+# Run cl on launch
+cl
