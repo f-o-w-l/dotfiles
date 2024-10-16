@@ -1819,11 +1819,6 @@
     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
   },
   {
-    "key": "ctrl+l",
-    "command": "-workbench.action.chat.clear",
-    "when": "hasChatProvider && inChat"
-  },
-  {
     "key": "shift+alt+l",
     "command": "editor.action.moveLinesDownAction"
   },
@@ -1838,5 +1833,23 @@
   {
     "key": "shift+alt+g",
     "command": "pr:github.focus"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "aichat.newchataction"
+  },
+  {
+      "key": "ctrl+l",
+      "command": "-aichat.newchataction"
+  },
+  {
+      "key": "ctrl+\\",
+      "command": "workbench.action.chat.newChat",
+      "when": "chatIsEnabled && inChat"
+  },
+  {
+      "key": "ctrl+l",
+      "command": "-workbench.action.chat.newChat",
+      "when": "chatIsEnabled && inChat"
   }
 ]
