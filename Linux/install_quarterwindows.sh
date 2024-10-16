@@ -32,4 +32,4 @@ fi
 
 # Set quarterwindows shortcuts
 echo "Setting quarterwindows shortcuts..."
-./quarterwindows_keybinds.sh
+./Linux/quarterwindows_keybinds.sh

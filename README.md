@@ -3,11 +3,19 @@
 Configuration files for:
 
 - bash
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Sublime Text 4](https://www.sublimetext.com/)
+- zsh
+- [Visual Studio Code](https://code.visualstudio.com/) / [Cursor](https://www.cursor.com/)
+- [Sublime Text 4](https://www.sublimetext.com/) (not used anymore)
 
 
 ## Installation
+
+### Automatic installation
+
+#### Linux
+Run `./Linux/linux_setup.sh`
+
+### Manual installation
 
 #### Visual Studio Code Linux/Windows setup
 1. Use a soft symbolic link to replace keybindings.json and settings.json from VS Code's User folder with the files in `./Code/`.

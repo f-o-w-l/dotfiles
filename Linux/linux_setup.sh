@@ -72,7 +72,7 @@ ln -s $HOME/dev/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/dev/dotfiles/.aliases $HOME/.aliases
 
 # Install exa
-sudo ./install_exa.sh
+sudo ./Linux/install_exa.sh
 
 # Install quarterwindows
-./install_quarterwindows.sh
+./Linux/install_quarterwindows.sh
