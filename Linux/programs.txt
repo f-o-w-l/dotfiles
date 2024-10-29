@@ -1,26 +1,35 @@
 7zz
 7zzs
 act
-bfg-1.14.0.jar
-code
-exa
 feh
-firefox
 flameshot
 foxglove
 git-lfs
-GitKraken
 jq
 lm-sensors
-ncdu2
-quarterwindows
 ros
 rust/cargo
-slack
-unityhub
-zsh
 
-flatpak:
+automated:
+  zsh
+  exa
+  ncdu2
+  quarterwindows
+  htop
+  pass
+  postgresql
+  feh
+
+online:
+  Cursor
+  GitKraken
+  Docker
+  bfg-1.14.0.jar
+  Unity Hub
+  Slack
+  VS Code
+
+Pop Shop/flatpak:
   Remote Touchpad
   OBS Studio - com.obsproject.Studio
   Ungoogled Chromium - io.github.ungoogled_software.ungoogled_chromium

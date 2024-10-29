@@ -1,3 +1,10 @@
+#!/bin/bash
+
+RELEASE_URL="https://github.com/troyready/quarterwindows/releases/download/v12/quarterwindows@troyready.com-v12.zip"
+ZIP_FILE="quarterwindows@troyready.com-v12.zip "
+EXTENSION_FOLDER="quarterwindows@troyready.com"
+EXTENSIONS_DIR="$HOME/.local/share/gnome-shell/extensions"
+
 # Check if quarterwindows is already installed
 if [ ! -d "$EXTENSIONS_DIR/$EXTENSION_FOLDER" ]; then
     echo "Installing quarterwindows..."
