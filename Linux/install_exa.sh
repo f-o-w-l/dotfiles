@@ -21,7 +21,7 @@ then
     exit 0
 fi
 
-# Check if running as root
+# Ensure script runs as root
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root. Please run with sudo."
    exit 1
