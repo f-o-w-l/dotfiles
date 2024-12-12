@@ -65,6 +65,4 @@ export PATH=$PATH:$FLYCTL_INSTALL/bin
 
 [ -s "/home/fowl/.jabba/jabba.sh" ] && source "/home/fowl/.jabba/jabba.sh"
 
-. "$HOME/.cargo/env"
-
 zsh

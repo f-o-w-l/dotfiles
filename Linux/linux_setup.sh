@@ -20,18 +20,26 @@ ln -s $HOME/dev/dotfiles/.aliases $HOME/.aliases
 # Install exa
 sudo ./Linux/install_exa.sh
 
-# Install htop
-if command -v htop &> /dev/null
-then
-    echo "htop already installed at $(which htop)"
-else
-    sudo apt install htop
-fi
-
 # Install ncdu2
 ./Linux/install_ncdu.sh
 
 # Install quarterwindows
 ./Linux/install_quarterwindows.sh
+
+# Install apt packages
+sudo apt-get install -y \
+    htop \
+    pass \
+    postgresql \
+    feh \
+    libbz2-dev \
+    libncurses5-dev libncursesw5-dev \
+    libreadline-dev \
+    libssl-dev \
+    libffi-dev \
+    zlib1g-dev \
+    libsqlite3-dev \
+    liblzma-dev \
+    tk-dev \
 
 echo "Done!"

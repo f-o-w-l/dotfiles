@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RELEASE_URL="https://github.com/troyready/quarterwindows/releases/download/v12/quarterwindows@troyready.com-v12.zip"
 ZIP_FILE="quarterwindows@troyready.com-v12.zip "
 EXTENSION_FOLDER="quarterwindows@troyready.com"

@@ -13,13 +13,17 @@ rust/cargo
 automated:
   zsh
   exa
-  htop
   ncdu2
   quarterwindows
+  htop
+  pass
+  postgresql
+  feh
 
 online:
   Cursor
   GitKraken
+  Docker
   bfg-1.14.0.jar
   Unity Hub
   Slack
