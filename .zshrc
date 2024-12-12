@@ -78,7 +78,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # . /opt/asdf-vm/asdf.sh
 
 # Source SSH settings, if applicable
-export SSHUSER="fowl.software"
+export SSHUSER="luke@kinetic.auto"
 SSH_ENV="/home/fowl/.ssh/environment-$(hostname)"
 
 function start_agent {

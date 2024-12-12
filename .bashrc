@@ -17,29 +17,6 @@ if [ -s /.prod.aliases -a -r ~/.prod.aliases ]; then
     source ~/.prod.aliases
 fi
 
-export SSHUSER="fowl.software"
-SSH_ENV="/home/fowl/.ssh/agent-environment"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
-
 if [ $(uname -s) = "Darwin" ]; then
     # export EDITOR="codium"
     export EDITOR="nano"
