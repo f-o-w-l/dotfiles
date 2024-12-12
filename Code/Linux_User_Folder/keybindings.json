@@ -696,10 +696,6 @@
     "command": "-workbench.action.nextEditorInGroup"
   },
   {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditorInGroup"
-  },
-  {
     "key": "ctrl+k ctrl+pageup",
     "command": "-workbench.action.previousEditorInGroup"
   },
@@ -1851,5 +1847,35 @@
       "key": "ctrl+l",
       "command": "-workbench.action.chat.newChat",
       "when": "chatIsEnabled && inChat"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.action.inlineEdit.accept",
+    "when": "cursorAtInlineEdit && inlineEditVisible && !editorReadonly"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineEdit.accept",
+    "when": "cursorAtInlineEdit && inlineEditVisible && !editorReadonly"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-acceptAlternativeSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+meta+tab",
+    "command": "-aichat.selectNextTab",
+    "when": "view == 'workbench.panel.aichat.view'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-insertPrevSuggestion",
+    "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
   }
 ]
