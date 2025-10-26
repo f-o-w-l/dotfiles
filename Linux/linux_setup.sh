@@ -17,8 +17,8 @@ ln -s $HOME/dev/dotfiles/.aliases $HOME/.aliases
 # Install zsh
 ./Linux/install_zsh.sh
 
-# Install exa
-sudo ./Linux/install_exa.sh
+# Install eza
+sudo ./Linux/install_eza.sh
 
 # Install ncdu2
 ./Linux/install_ncdu.sh
@@ -27,19 +27,21 @@ sudo ./Linux/install_exa.sh
 ./Linux/install_quarterwindows.sh
 
 # Install apt packages
+sudo apt update
 sudo apt-get install -y \
-    htop \
-    pass \
-    postgresql \
     feh \
+    gpg \
+    htop \
     libbz2-dev \
+    libffi-dev \
+    liblzma-dev \
     libncurses5-dev libncursesw5-dev \
     libreadline-dev \
-    libssl-dev \
-    libffi-dev \
-    zlib1g-dev \
     libsqlite3-dev \
-    liblzma-dev \
+    libssl-dev \
+    pass \
+    postgresql \
     tk-dev \
+    zlib1g-dev \
 
 echo "Done!"

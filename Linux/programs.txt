@@ -12,7 +12,7 @@ rust/cargo
 
 automated:
   zsh
-  exa
+  eza
   ncdu2
   quarterwindows
   htop
@@ -40,7 +40,6 @@ asdf:
   deno
   nodejs
   pnpm
-  python
 
 pnpm -g:
   @types/node

@@ -1,6 +1,5 @@
 hammerspoon
 vscodium
-1password
 alfred
 shortcutdetective
 firefox
@@ -8,4 +7,3 @@ gitkraken
 docker
 slack
 chromium
-
