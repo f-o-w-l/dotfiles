@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=/home/fowl/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/fowl/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -62,67 +62,16 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# ----- End default .zshrc -----
 
-source /home/fowl/.aliases
+# Persist SSH session for new terminals
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent lifetime 12h
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/*
 
-source /opt/ros/noetic/setup.zsh
+[[ -r ~/.aliases ]] && source ~/.aliases
+[[ -r ~/.prod.aliases ]] && source ~/.prod.aliases
+[[ -r ~/.programs ]] && source ~/.programs
 
-[ -s "/home/fowl/.jabba/jabba.sh" ] && source "/home/fowl/.jabba/jabba.sh"
-
-# Append asdf completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-
-# Initialize asdf
-. /home/fowl/.asdf/asdf.sh
-# . /opt/asdf-vm/asdf.sh
-
-# Source SSH settings, if applicable
-export SSHUSER="luke@kinetic.auto"
-SSH_ENV="/home/fowl/.ssh/environment-$(hostname)"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-export EDITOR="code"
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# pnpm
-export PNPM_HOME="/home/fowl/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-. "$HOME/ros/devel/setup.sh"
-export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"
-
-# Run cl on launch
-cl
+# vim for remote sessions or macOS, code otherwise
+export EDITOR=$([[ -n $SSH_CONNECTION || $(uname -s) = "Darwin" ]] && echo vim || echo code)

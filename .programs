@@ -1,0 +1,43 @@
+# arcanist
+export PATH=$PATH:/opt/arcanist/bin
+
+# yarn
+export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
+
+# flyctl
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH=$PATH:$FLYCTL_INSTALL/bin
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Append asdf completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# Initialize asdf
+. $HOME/.asdf/asdf.sh
+# . /opt/asdf-vm/asdf.sh
+
+# ROS env init
+if [ -n "$ZSH_VERSION" ]; then
+    # We're in zsh
+    if [ -f /opt/ros/noetic/setup.zsh ]; then
+        source /opt/ros/noetic/setup.zsh
+    fi
+    if [ -f "$HOME/ros/devel/setup.zsh" ]; then
+        source "$HOME/ros/devel/setup.zsh"
+    fi
+else
+    # Assume bash
+    if [ -f /opt/ros/noetic/setup.bash ]; then
+        source /opt/ros/noetic/setup.bash
+    fi
+    if [ -f "$HOME/ros/devel/setup.bash" ]; then
+        source "$HOME/ros/devel/setup.bash"
+    fi
+fi
+
+export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"

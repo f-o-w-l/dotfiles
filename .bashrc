@@ -1,45 +1,76 @@
-# bind 'set completion-ignore-case On'
-# bind 'set expand-tilde on'
-# bind 'set convert-meta off'
-# bind 'set input-meta on'
-# bind 'set output-meta on'
-# bind 'set show-all-if-ambiguous on'
-# bind 'set colored-stats on'
-# bind 'set visible-stats on'
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-# bind TAB:menu-complete
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
-if [ -s ~/.aliases -a -r ~/.aliases ]; then
-    source ~/.aliases
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-if [ -s /.prod.aliases -a -r ~/.prod.aliases ]; then
-    source ~/.prod.aliases
+CLICOLOR=1
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+if command -v dircolors >/dev/null 2>&1; then
+    eval "$(dircolors)"
 fi
 
-if [ $(uname -s) = "Darwin" ]; then
-    # export EDITOR="codium"
-    export EDITOR="nano"
-else
-    export EDITOR="code"
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
-export LS_COLORS="di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90"
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h\[\033[m\]\$"
-export CLICOLOR=1
+bind 'set completion-ignore-case On'
+bind 'set expand-tilde on'
+bind 'set convert-meta off'
+bind 'set input-meta on'
+bind 'set output-meta on'
+bind 'set show-all-if-ambiguous on'
+bind 'set colored-stats on'
+bind 'set visible-stats on'
 
-export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+bind TAB:menu-complete
 
-export PATH=$PATH:/opt/arcanist/bin
+[[ -r ~/.aliases ]] && source ~/.aliases
+[[ -r ~/.prod.aliases ]] && source ~/.prod.aliases
+[[ -r ~/.programs ]] && source ~/.programs
 
-export PATH=$PATH:/home/fowl/.yarn/bin:/home/fowl/.config/yarn/global/node_modules/.bin
-
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin
-
-export FLYCTL_INSTALL="/home/fowl/.fly"
-export PATH=$PATH:$FLYCTL_INSTALL/bin
-
-[ -s "/home/fowl/.jabba/jabba.sh" ] && source "/home/fowl/.jabba/jabba.sh"
-
-zsh
+# vim for remote sessions or macOS, code otherwise
+export EDITOR=$([[ -n $SSH_CONNECTION || $(uname -s) = "Darwin" ]] && echo vim || echo code)

@@ -1,64 +1,125 @@
+# Detect OS and WSL
+OS_NAME="$(uname -s)"
+IS_WSL=false
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    IS_WSL=true
+fi
+
+# ----------------------------------------
 # Filesystem browsing
-alias ls='exa --classify --header --all --git --long'
-alias ll='exa --classify --header --all --git --long'
-alias la='exa --classify --header --all --git --long --sort date --reverse'
-alias lt='exa --classify --header --all --git --long --tree'
+# ----------------------------------------
+if [[ "$OS_NAME" == "Darwin" || "$OS_NAME" == "Linux" ]]; then
+    alias ls='eza --classify --header --all --git --long'
+    alias ll='eza --classify --header --all --git --long'
+    alias la='eza --classify --header --all --git --long --sort date --reverse'
+    alias lt='eza --classify --header --all --git --long --tree'
+else
+    alias ls='ls --color=auto -F'
+    alias ll='ls --color=auto -lAhF'
+    alias la='ls --color=auto -lAhFtr'
+    alias lt='ls --color=auto -R'
+fi
+
 alias tg='lt | grep '
 alias c='clear'
 alias cl='c && ll'
 alias ca='c && la'
 alias l='ls'
 
+# ----------------------------------------
 # Filesystem general
+# ----------------------------------------
 alias whence='type -a'
-alias grep='grep --color'
-alias egrep='egrep --color=auto'
+alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias df='df -h'
-if [ $(uname -s) = "Darwin" ]; then
+
+# ncdu2 not supported on macOS, but supports ncdu
+if [[ "$OS_NAME" == "Darwin" ]]; then
     alias du='ncdu'
 else
     alias du='ncdu2'
 fi
+
 alias psg='pst | grep '
 # delete empty dirs
 alias ded='find . -type d -empty -print0 | xargs -0 -I {} /bin/rm -r "{}"'
 # delete images
 alias dim="find -type f \( -iname '*.jp*g' -or -iname '*.png' \) -delete"
 
+# ----------------------------------------
 # Programs
+# ----------------------------------------
 alias less='less -r'
 alias g++='g++ -std=c++11 -Wall'
 alias ns='nordvpn status'
 alias dm='docker-machine'
 alias dps='docker ps -a'
-alias dsra='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dbu='docker-compose build && docker-compose up -d'
 alias drmi='docker rmi $(docker images -a --filter=dangling=true -q) && docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-function dip() {
-    docker inspect $1 | grep IPAddress
+
+# Get container IP addresses
+dip() {
+    docker inspect "$1" | grep IPAddress
+}
+# Stop and remove all containers
+dsra() {
+    local ids=$(docker ps -aq)
+    if [[ -n "$ids" ]]; then
+        docker stop $ids && docker rm $ids
+    else
+        echo "No containers to stop/remove."
+    fi
+}
+# Remove dangling images and stopped/created containers
+drmi() {
+    local images=$(docker images -a --filter=dangling=true -q)
+    if [[ -n "$images" ]]; then
+        docker rmi $images
+    else
+        echo "No dangling images to remove."
+    fi
+
+    local containers=$(docker ps --filter=status=exited --filter=status=created -q)
+    if [[ -n "$containers" ]]; then
+        docker rm $containers
+    else
+        echo "No stopped containers to remove."
+    fi
 }
 
+# ----------------------------------------
 # System
+# ----------------------------------------
 alias pst='pstree -cglpst -C age'
 alias pstu='pst -u $USER'
-function restart_audio() {
+
+restart_audio() {
     systemctl --user restart pulseaudio
     rm -r ~/.config/pulse
     pulseaudio -k
 }
-function setup_tv_monitor() {
-    xrandr \
-        --fb 3840x2280 \
-        --output eDP-1-1 --primary --mode 1920x1200 --pos 0x0 --rate 60 \
-        --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1 --rate 60
-}
 
-# SSH
-alias church='autossh -M 0 {$SSHUSER}@church.csce.uark.edu'
-alias turing='autossh -M 0 {$SSHUSER}@turing.csce.uark.edu'
+if [[ "$OS_NAME" != "MINGW"* && "$OS_NAME" != "CYGWIN"* && "$OS_NAME" != "MSYS"* ]]; then
+    setup_tv_monitor() {
+        xrandr \
+            --fb 3840x2280 \
+            --output eDP-1-1 --primary --mode 1920x1200 --pos 0x0 --rate 60 \
+            --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1 --rate 60
+    }
+fi
 
+# ----------------------------------------
+# WSL helpers
+# ----------------------------------------
+if [[ "$IS_WSL" == true ]]; then
+    alias clip='clip.exe'
+fi
+
+# ----------------------------------------
 # Git
+# ----------------------------------------
 alias cg='cl && git status'
 alias ga='git add'
 alias gau='git add --update'
@@ -73,6 +134,7 @@ alias gcf='git commit --fixup'
 alias gca='git commit --amend --message'
 alias gco='git checkout'
 alias gcob='git checkout -b'
+alias gcoc='git checkout $(git branch --show-current)'
 alias gcot='git checkout --track'
 alias gcom='git checkout main || git checkout master'
 alias gcon='git checkout next'
@@ -89,6 +151,7 @@ alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmc='git merge --continue'
+alias gnun='git update-index --no-assume-unchanged'
 alias gp='git pull --no-rebase'
 alias gpr='git pull --rebase'
 alias gpf='git pull --ff-only'
@@ -108,4 +171,4 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
 alias gun='git update-index --assume-unchanged'
-alias gnun='git update-index --no-assume-unchanged'
+alias gup='git fetch --all && git pull --ff-only'
