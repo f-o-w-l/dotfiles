@@ -29,6 +29,7 @@ sudo ./Linux/install_eza.sh
 # Install apt packages
 sudo apt update
 sudo apt-get install -y \
+    bat \
     feh \
     gpg \
     htop \
@@ -43,5 +44,8 @@ sudo apt-get install -y \
     postgresql \
     tk-dev \
     zlib1g-dev \
+
+# bat is installed as batcat
+alias bat="batcat"
 
 echo "Done!"

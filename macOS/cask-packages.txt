@@ -1,9 +1,10 @@
-hammerspoon
-vscodium
 alfred
-shortcutdetective
+bat
+chromium
+docker
 firefox
 gitkraken
-docker
+hammerspoon
+shortcutdetective
 slack
-chromium
+vscodium
