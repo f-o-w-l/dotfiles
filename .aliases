@@ -57,7 +57,6 @@ alias ns='nordvpn status'
 alias dm='docker-machine'
 alias dps='docker ps -a'
 alias dbu='docker-compose build && docker-compose up -d'
-alias drmi='docker rmi $(docker images -a --filter=dangling=true -q) && docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
 # Get container IP addresses
 dip() {
