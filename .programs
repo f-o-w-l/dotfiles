@@ -1,25 +1,47 @@
+# Helper function to prepend a dir to PATH if not already there
+path_prepend() {
+    case ":$PATH:" in
+        *":$1:"*) ;;           # already in PATH, do nothing
+        *) PATH="$1:$PATH";;
+    esac
+}
+
+# Helper function to append a dir to PATH if not already there
+path_append() {
+    case ":$PATH:" in
+        *":$1:"*) ;;           # already in PATH, do nothing
+        *) PATH="$PATH:$1";;
+    esac
+}
+
 # arcanist
-export PATH=$PATH:/opt/arcanist/bin
+path_append /opt/arcanist/bin
+
+# go
+path_prepend $HOME/go/bin
 
 # yarn
-export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
+path_append $HOME/.yarn/bin
+path_append $HOME/.config/yarn/global/node_modules/.bin
 
 # flyctl
 export FLYCTL_INSTALL="$HOME/.fly"
-export PATH=$PATH:$FLYCTL_INSTALL/bin
+path_append $FLYCTL_INSTALL/bin
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+path_prepend $PNPM_HOME
+
+# asdf
+path_prepend "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Append asdf completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# Initialize asdf
-. $HOME/.asdf/asdf.sh
-# . /opt/asdf-vm/asdf.sh
 
 # ROS env init
 if [ -n "$ZSH_VERSION" ]; then
