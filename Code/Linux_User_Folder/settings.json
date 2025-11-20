@@ -1,7 +1,7 @@
 {
   "workbench.editor.closeEmptyGroups": false,
   "prettier.requireConfig": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "files.defaultLanguage": "${activeEditorLanguage}",
   "editor.tabSize": 2,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -66,5 +66,8 @@
   "window.zoomLevel": 4,
   "[xml]": {
     "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }

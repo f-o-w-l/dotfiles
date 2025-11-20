@@ -5,9 +5,6 @@
         "editor.formatOnType": true
     },
     "redhat.telemetry.enabled": false,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
     "biome.suggestInstallingGlobally": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -18,8 +15,8 @@
         "*.css": "css",
         "*.cfg": "vdf"
     },
-    "[css]": {
-        "editor.defaultFormatter": "biomejs.biome"
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
     },
     "editor.defaultFormatter": "biomejs.biome",
     "python.defaultInterpreterPath": "c:\\Python313\\python.exe",
