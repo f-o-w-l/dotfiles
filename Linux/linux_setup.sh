@@ -1,18 +1,17 @@
 #!/bin/bash
+set -e
 
-# Link VS Code settings for Cursor
-rm $HOME/.config/Cursor/User/keybindings.json
-rm $HOME/.config/Cursor/User/settings.json
-ln -s $HOME/dev/dotfiles/Code/Linux_User_Folder/keybindings.json $HOME/.config/Cursor/User/keybindings.json
-ln -s $HOME/dev/dotfiles/Code/Linux_User_Folder/settings.json $HOME/.config/Cursor/User/settings.json
+DOTFILES="$HOME/dev/dotfiles"
 
-# Link dotfiles
-rm -f $HOME/.zshrc
-rm -f $HOME/.bashrc
-rm -f $HOME/.aliases
-ln -s $HOME/dev/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/dev/dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/dev/dotfiles/.aliases $HOME/.aliases
+# Link general home dir dotfiles
+for f in .zshrc .bashrc .aliases; do
+    rm -f "$HOME/$f"
+    ln -s "$DOTFILES/$f" "$HOME/$f"
+done
+
+# Setup VS Code + Cursor's User folders (keybindings/settings.json)
+export CODE_USER_FOLDER="$DOTFILES/Code/Linux_User_Folder"
+./Linux/setup_code_user_folder.sh
 
 # Install zsh
 ./Linux/install_zsh.sh
@@ -20,17 +19,27 @@ ln -s $HOME/dev/dotfiles/.aliases $HOME/.aliases
 # Install eza
 sudo ./Linux/install_eza.sh
 
+# Install delta
+sudo ./Linux/install_delta.sh
+
 # Install ncdu2
 ./Linux/install_ncdu.sh
 
 # Install quarterwindows
-./Linux/install_quarterwindows.sh
+if command -v dconf >/dev/null 2>&1; then
+    ./Linux/install_quarterwindows.sh
+    echo "Setting quarterwindows shortcuts..."
+    ./Linux/quarterwindows_keybinds.sh
+else
+    echo "dconf not found, skipping quarterwindows setup (likely running in WSL)."
+fi
 
 # Install apt packages
 sudo apt update
-sudo apt-get install -y \
+sudo apt-get -y install \
     bat \
     feh \
+    golang-go \
     gpg \
     htop \
     libbz2-dev \
@@ -45,7 +54,28 @@ sudo apt-get install -y \
     tk-dev \
     zlib1g-dev \
 
+# Install asdf after apt-get installs golang-go
+./Linux/install_asdf.sh
+
 # bat is installed as batcat
 alias bat="batcat"
 
-echo "Done!"
+# Install ROS
+echo "Choose ROS version to install:"
+echo "  1) ROS1"
+echo "  2) ROS2"
+read -p "Enter 1 or 2: " choice
+
+case "$choice" in
+  1)
+    sudo ./Linux/install_ros1.sh
+    ;;
+  2)
+    sudo ./Linux/install_ros2.sh
+    ;;
+  *)
+    echo "Invalid choice. Skipping..."
+    ;;
+esac
+
+echo "Linux setup done!"
