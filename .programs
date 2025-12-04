@@ -42,24 +42,32 @@ autoload -Uz compinit && compinit
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# ROS
+# Comment/uncomment per ROS distro to use
+# export ROS1_DISTRO="noetic"
+export ROS2_DISTRO="kilted"
 
-# ROS env init
 if [ -n "$ZSH_VERSION" ]; then
-    # We're in zsh
-    if [ -f /opt/ros/noetic/setup.zsh ]; then
-        source /opt/ros/noetic/setup.zsh
+    if [[ -n "$ROS1_DISTRO" ]]; then
+        if [[ -f "/opt/ros/$ROS1_DISTRO/setup.zsh" ]]; then
+            source "/opt/ros/$ROS1_DISTRO/setup.zsh"
+        fi
     fi
-    if [ -f "$HOME/ros/devel/setup.zsh" ]; then
-        source "$HOME/ros/devel/setup.zsh"
+    if [[ -n "$ROS2_DISTRO" ]]; then
+        if [[ -f "/opt/ros/$ROS2_DISTRO/setup.zsh" ]]; then
+            source "/opt/ros/$ROS2_DISTRO/setup.zsh"
+        fi
     fi
 else
     # Assume bash
-    if [ -f /opt/ros/noetic/setup.bash ]; then
-        source /opt/ros/noetic/setup.bash
+    if [[ -n "$ROS1_DISTRO" ]]; then
+        if [[ -f "/opt/ros/$ROS1_DISTRO/setup.bash" ]]; then
+            source "/opt/ros/$ROS1_DISTRO/setup.bash"
+        fi
     fi
-    if [ -f "$HOME/ros/devel/setup.bash" ]; then
-        source "$HOME/ros/devel/setup.bash"
+    if [[ -n "$ROS2_DISTRO" ]]; then
+        if [[ -f "/opt/ros/$ROS2_DISTRO/setup.bash" ]]; then
+            source "/opt/ros/$ROS2_DISTRO/setup.bash"
+        fi
     fi
 fi
-
-export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"

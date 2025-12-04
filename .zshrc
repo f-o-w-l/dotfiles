@@ -91,18 +91,3 @@ export EDITOR=$([[ -n $SSH_CONNECTION || $(uname -s) = "Darwin" ]] && echo vim |
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Comment/uncomment per ROS distro to use
-# export ROS1_DISTRO="noetic"
-export ROS2_DISTRO="kilted"
-
-if [[ -n "$ROS1_DISTRO" ]]; then
-    if [[ -f "/opt/ros/$ROS1_DISTRO/setup.zsh" ]]; then
-        source "/opt/ros/$ROS1_DISTRO/setup.zsh"
-    fi
-fi
-if [[ -n "$ROS2_DISTRO" ]]; then
-    if [[ -f "/opt/ros/$ROS2_DISTRO/setup.zsh" ]]; then
-        source "/opt/ros/$ROS2_DISTRO/setup.zsh"
-    fi
-fi
