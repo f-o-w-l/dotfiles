@@ -34,13 +34,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias df='df -h'
-
-# ncdu2 not supported on macOS, but supports ncdu
-if [[ "$OS_NAME" == "Darwin" ]]; then
-    alias du='ncdu'
-else
-    alias du='ncdu2'
-fi
+alias du='ncdu'
 
 alias psg='pst | grep '
 # delete empty dirs
