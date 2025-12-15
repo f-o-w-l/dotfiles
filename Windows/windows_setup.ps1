@@ -1,10 +1,11 @@
 $ErrorActionPreference = "Stop"
 
-$DOTFILES = "$env:USERPROFILE\dev\dotfiles"
+$WIN_DOTFILES_DIR = "$env:USERPROFILE\dotfiles\Code\Windows_User_Folder"
+$CHOCO_PACKAGES_CONFIG = "$env:USERPROFILE\dotfiles\Windows\packages.config"
 
 # Helper function to create symlinks
 function Link-Config($src, $dest) {
-    if (Test-Path $src) {
+    if (Test-Path $src -PathType Leaf) {
         $destDir = Split-Path $dest -Parent
         if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Force -Path $destDir }
         if (Test-Path $dest) { Remove-Item $dest -Force }
@@ -15,19 +16,26 @@ function Link-Config($src, $dest) {
     }
 }
 
-# VS Code User folder
-$VSCODE_USER = Join-Path $env:APPDATA "Code\User"
-Link-Config "$DOTFILES\Code\Windows_User_Folder\keybindings.json" "$VSCODE_USER\keybindings.json"
-Link-Config "$DOTFILES\Code\Windows_User_Folder\settings.json" "$VSCODE_USER\settings.json"
+$VSCODE_USER_DIR = Join-Path $env:APPDATA "Code\User"
+$CURSOR_USER_DIR = Join-Path $env:LOCALAPPDATA "Cursor\User"
 
-# Cursor User folder
-$CURSOR_USER = Join-Path $env:LOCALAPPDATA "Cursor\User"
-Link-Config "$DOTFILES\Code\Windows_User_Folder\keybindings.json" "$CURSOR_USER\keybindings.json"
-Link-Config "$DOTFILES\Code\Windows_User_Folder\settings.json" "$CURSOR_USER\settings.json"
+if (Test-Path $VSCODE_USER_DIR) {
+    Link-Config "$WIN_DOTFILES_DIR\keybindings.json" "$VSCODE_USER_DIR\keybindings.json"
+    Link-Config "$WIN_DOTFILES_DIR\settings.json" "$VSCODE_USER_DIR\settings.json"
+} else {
+    Write-Host "VS Code not installed, skipping user folder symlinks"
+}
+
+if (Test-Path $CURSOR_USER_DIR) {
+    Link-Config "$WIN_DOTFILES_DIR\keybindings.json" "$CURSOR_USER_DIR\keybindings.json"
+    Link-Config "$WIN_DOTFILES_DIR\settings.json" "$CURSOR_USER_DIR\settings.json"
+} else {
+    Write-Host "Cursor not installed, skipping user folder symlinks"
+}
 
 # Install Chocolatey packages
 if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Write-Host "Chocolatey not installed, please install first."
 } else {
-    choco install $DOTFILES\Windows\packages.config -y --ignore-checksums
+    choco install $CHOCO_PACKAGES_CONFIG -y --ignore-checksums
 }
