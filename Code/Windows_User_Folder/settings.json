@@ -1,25 +1,31 @@
 {
-    "editor.tabSize": 2,
-    "git.openRepositoryInParentFolders": "always",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "redhat.telemetry.enabled": false,
-    "biome.suggestInstallingGlobally": false,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit",
-        "source.fixAll.biome": "explicit"
-    },
-    "files.associations": {
-        "*.css": "css",
-        "*.cfg": "vdf"
-    },
-    "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
-    },
-    "editor.defaultFormatter": "biomejs.biome",
-    "python.defaultInterpreterPath": "c:\\Python313\\python.exe",
-    "python.analysis.typeCheckingMode": "standard",
-    "security.workspace.trust.untrustedFiles": "open"
+	"editor.tabSize": 2,
+	"git.openRepositoryInParentFolders": "always",
+	"[python]": {
+		"editor.formatOnType": true
+	},
+	"redhat.telemetry.enabled": false,
+	"biome.suggestInstallingGlobally": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"source.fixAll.biome": "explicit"
+	},
+	"files.associations": {
+		"*.css": "css",
+		"*.cfg": "vdf"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"python.defaultInterpreterPath": "c:\\Python313\\python.exe",
+	"python.analysis.typeCheckingMode": "standard",
+	"security.workspace.trust.untrustedFiles": "open",
+	"security.allowedUNCHosts": ["wsl.localhost"],
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"remote.autoForwardPortsSource": "hybrid",
+	"editor.minimap.enabled": false
 }
