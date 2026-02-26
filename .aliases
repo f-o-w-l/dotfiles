@@ -163,5 +163,8 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
+alias gstsh='git stash show -p'
+# Interactive partial-file chunk stashing
+alias gsti="git stash push -p"
 alias gun='git update-index --assume-unchanged'
 alias gup='git fetch --all && git pull --ff-only'
