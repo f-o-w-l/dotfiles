@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # Persist SSH session for new terminals
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent lifetime 12h
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/*
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/olfowler ~/.ssh/oliver.fowler
 
 [[ -r ~/.aliases ]] && source ~/.aliases
 [[ -r ~/.prod.aliases ]] && source ~/.prod.aliases
