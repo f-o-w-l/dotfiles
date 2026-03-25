@@ -13,7 +13,8 @@
 	},
 	"files.associations": {
 		"*.css": "css",
-		"*.cfg": "vdf"
+		"*.cfg": "vdf",
+		"*.scss": "scss"
 	},
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
@@ -22,10 +23,62 @@
 	"python.defaultInterpreterPath": "c:\\Python313\\python.exe",
 	"python.analysis.typeCheckingMode": "standard",
 	"security.workspace.trust.untrustedFiles": "open",
-	"security.allowedUNCHosts": ["wsl.localhost"],
+	"security.allowedUNCHosts": [
+		"wsl.localhost"
+	],
 	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"remote.autoForwardPortsSource": "hybrid",
-	"editor.minimap.enabled": false
+	"editor.minimap.enabled": false,
+	"[scss]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"githubIssues.issueBranchTitle": "${issueNumber}-${sanitizedLowercaseIssueTitle}",
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"diffEditor.renderSideBySide": true,
+	"githubIssues.workingBaseBranch": "prompt",
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://biomejs.dev": true
+	},
+	"claudeCode.preferredLocation": "sidebar",
+	"claudeCode.environmentVariables": [
+		{
+			"name": "ANTHROPIC_BASE_URL",
+			"value": "https://api.portkey.ai"
+		},
+		{
+			"name": "ANTHROPIC_AUTH_TOKEN",
+			"value": "dummy"
+		},
+		{
+			"name": "ANTHROPIC_CUSTOM_HEADERS",
+			"value": ""
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+			"value": "@vertexai-global/anthropic.claude-sonnet-4-5@20250929"
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+			"value": "@vertexai-global/anthropic.claude-opus-4-1@20250805"
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+			"value": "@vertexai-global/anthropic.claude-haiku-4-5@20251001}"
+		}
+	],
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	}
 }
