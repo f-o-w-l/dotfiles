@@ -6,7 +6,6 @@
 	},
 	"redhat.telemetry.enabled": false,
 	"biome.suggestInstallingGlobally": false,
-	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
@@ -23,9 +22,7 @@
 	"python.defaultInterpreterPath": "c:\\Python313\\python.exe",
 	"python.analysis.typeCheckingMode": "standard",
 	"security.workspace.trust.untrustedFiles": "open",
-	"security.allowedUNCHosts": [
-		"wsl.localhost"
-	],
+	"security.allowedUNCHosts": ["wsl.localhost"],
 	"[html]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
@@ -79,6 +76,22 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[cpp]": {
-		"editor.defaultFormatter": "ms-vscode.cpptools"
-	}
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"[svg]": {
+		"editor.defaultFormatter": "jock.svg"
+	},
+	"[typescriptreact]": {},
+	"[css]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"workbench.editorAssociations": {
+		"*.svg": "default"
+	},
+	"workbench.colorTheme": "Dark Modern",
+	"files.defaultLanguage": "TypeScript JSX",
+	"clang-format.executable": "/usr/bin/clang-format-14",
+	"editor.formatOnSave": true,
+	"claudeCode.hideOnboarding": true,
+	"chat.mcp.gallery.enabled": true
 }
