@@ -936,5 +936,19 @@
 	{
 		"key": "shift+alt+r",
 		"command": "workbench.explorer.fileView.focus"
+	},
+	{
+		"key": "alt+g",
+		"command": "editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+shift+;",
+		"command": "-breadcrumbs.focus",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "ctrl+shift+;",
+		"command": "selectby.swapActive",
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]
