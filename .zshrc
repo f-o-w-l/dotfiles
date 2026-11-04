@@ -98,3 +98,6 @@ export UV_INDEX_CLOUDSMITH_PASSWORD=""
 
 # delta/bat render true colors instead of quantizing to the 256-color palette
 export COLORTERM=truecolor
+
+# Created by `pipx` on 2026-08-26 22:32:47
+export PATH="$PATH:/home/fowl/.local/bin"
