@@ -34,13 +34,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias df='df -h'
-
-# ncdu2 not supported on macOS, but supports ncdu
-if [[ "$OS_NAME" == "Darwin" ]]; then
-    alias du='ncdu'
-else
-    alias du='ncdu2'
-fi
+alias du='ncdu'
 
 alias psg='pst | grep '
 # delete empty dirs
@@ -125,6 +119,7 @@ alias gau='git add --update'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch --delete '
+alias gbdo='git push origin --delete '
 alias gc='git commit'
 alias gcm='git commit --message'
 # marks and prefixes comment as fix-up. combine
@@ -144,12 +139,14 @@ alias gcld='git clean -fd'
 alias gd='git diff'
 alias gdh='git diff HEAD'
 alias gdn='git diff --name-only'
+alias gdm='git diff main'
 alias gi='git init'
 alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmc='git merge --continue'
+alias grc='git rebase --continue'
 alias gnun='git update-index --no-assume-unchanged'
 alias gp='git pull --no-rebase'
 alias gpr='git pull --rebase'
@@ -169,5 +166,8 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
+alias gstsh='git stash show -p'
+# Interactive partial-file chunk stashing
+alias gsti="git stash push -p"
 alias gun='git update-index --assume-unchanged'
 alias gup='git fetch --all && git pull --ff-only'

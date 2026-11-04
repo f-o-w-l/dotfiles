@@ -55,27 +55,9 @@ sudo apt-get -y install \
     zlib1g-dev \
 
 # Install asdf after apt-get installs golang-go
-./Linux/install_asdf.sh
+# ./Linux/install_asdf.sh
 
 # bat is installed as batcat
 alias bat="batcat"
-
-# Install ROS
-echo "Choose ROS version to install:"
-echo "  1) ROS1"
-echo "  2) ROS2"
-read -p "Enter 1 or 2: " choice
-
-case "$choice" in
-  1)
-    sudo ./Linux/install_ros1.sh
-    ;;
-  2)
-    sudo ./Linux/install_ros2.sh
-    ;;
-  *)
-    echo "Invalid choice. Skipping..."
-    ;;
-esac
 
 echo "Linux setup done!"

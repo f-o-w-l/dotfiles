@@ -80,11 +80,12 @@ source $ZSH/oh-my-zsh.sh
 # Persist SSH session for new terminals
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent lifetime 12h
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/*
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/olfowler ~/.ssh/oliver.fowler
 
-[[ -r ~/.aliases ]] && source ~/.aliases
-[[ -r ~/.prod.aliases ]] && source ~/.prod.aliases
-[[ -r ~/.programs ]] && source ~/.programs
+[[ -r $HOME/.aliases ]] && source $HOME/.aliases
+[[ -r $HOME/.prod.aliases ]] && source $HOME/.prod.aliases
+[[ -r $HOME/.programs ]] && source $HOME/.programs
+[[ -r $HOME/.local/bin/env ]] && source "$HOME/.local/bin/env"
 
 # vim for remote sessions or macOS, code otherwise
 export EDITOR=$([[ -n $SSH_CONNECTION || $(uname -s) = "Darwin" ]] && echo vim || echo code)
@@ -92,17 +93,8 @@ export EDITOR=$([[ -n $SSH_CONNECTION || $(uname -s) = "Darwin" ]] && echo vim |
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Comment/uncomment per ROS distro to use
-# export ROS1_DISTRO="noetic"
-export ROS2_DISTRO="kilted"
+export UV_INDEX_CLOUDSMITH_USERNAME=__token__
+export UV_INDEX_CLOUDSMITH_PASSWORD=""
 
-if [[ -n "$ROS1_DISTRO" ]]; then
-    if [[ -f "/opt/ros/$ROS1_DISTRO/setup.zsh" ]]; then
-        source "/opt/ros/$ROS1_DISTRO/setup.zsh"
-    fi
-fi
-if [[ -n "$ROS2_DISTRO" ]]; then
-    if [[ -f "/opt/ros/$ROS2_DISTRO/setup.zsh" ]]; then
-        source "/opt/ros/$ROS2_DISTRO/setup.zsh"
-    fi
-fi
+# delta/bat render true colors instead of quantizing to the 256-color palette
+export COLORTERM=truecolor

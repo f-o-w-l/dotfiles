@@ -2,7 +2,7 @@
 path_prepend() {
     case ":$PATH:" in
         *":$1:"*) ;;           # already in PATH, do nothing
-        *) PATH="$1:$PATH";;
+        *) export PATH="$1:$PATH";;
     esac
 }
 
@@ -10,7 +10,7 @@ path_prepend() {
 path_append() {
     case ":$PATH:" in
         *":$1:"*) ;;           # already in PATH, do nothing
-        *) PATH="$PATH:$1";;
+        *) export PATH="$PATH:$1";;
     esac
 }
 
@@ -39,27 +39,10 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-
-# ROS env init
-if [ -n "$ZSH_VERSION" ]; then
-    # We're in zsh
-    if [ -f /opt/ros/noetic/setup.zsh ]; then
-        source /opt/ros/noetic/setup.zsh
-    fi
-    if [ -f "$HOME/ros/devel/setup.zsh" ]; then
-        source "$HOME/ros/devel/setup.zsh"
-    fi
-else
-    # Assume bash
-    if [ -f /opt/ros/noetic/setup.bash ]; then
-        source /opt/ros/noetic/setup.bash
-    fi
-    if [ -f "$HOME/ros/devel/setup.bash" ]; then
-        source "$HOME/ros/devel/setup.bash"
-    fi
-fi
-
-export PYTHONPATH="/opt/ros/noetic/lib/python3/dist-packages"

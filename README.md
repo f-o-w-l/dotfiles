@@ -15,6 +15,14 @@ Configuration files for:
 #### Linux
 Run `./Linux/linux_setup.sh`
 
+#### macOS
+```bash
+brew install --cask ./macOS/cask-packages.txt
+brew install ./macOS/packages.txt
+```
+
+Then paste `./macOS/hammerspoon-window-tiling.lua` to Hammerspoon's Config/`init.lua`.
+
 ### Manual installation
 
 #### Visual Studio Code Linux/Windows setup

@@ -1,44 +1,105 @@
 {
-    "editor.tabSize": 2,
-    "git.openRepositoryInParentFolders": "always",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "redhat.telemetry.enabled": false,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    "biome.suggestInstallingGlobally": false,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit",
-        "source.fixAll.biome": "explicit"
-    },
-    "files.associations": {
-        "*.css": "css",
-        "*.cfg": "vdf"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    "editor.defaultFormatter": "biomejs.biome",
-    "python.defaultInterpreterPath": "c:\\Python313\\python.exe",
-    "python.analysis.typeCheckingMode": "standard",
-    "security.workspace.trust.untrustedFiles": "open",
-    "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
-    },
-    "[javascript]": {
-        "editor.maxTokenizationLineLength": 2500
-    },
-    "json.schemaDownload.trustedDomains": {
-        "https://schemastore.azurewebsites.net/": true,
-        "https://raw.githubusercontent.com/microsoft/vscode/": true,
-        "https://raw.githubusercontent.com/devcontainers/spec/": true,
-        "https://www.schemastore.org/": true,
-        "https://json.schemastore.org/": true,
-        "https://json-schema.org/": true,
-        "https://developer.microsoft.com/json-schemas/": true,
-        "https://biomejs.dev": true
-    }
+	"editor.tabSize": 2,
+	"editor.minimap.enabled": false,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"source.fixAll.biome": "explicit"
+	},
+	"files.associations": {
+		"*.css": "css",
+		"*.cfg": "vdf",
+		"*.scss": "scss"
+	},
+	"files.defaultLanguage": "TypeScript JSX",
+	"workbench.editorAssociations": {
+		"*.svg": "default"
+	},
+	"workbench.colorTheme": "Dark Modern",
+	"biome.suggestInstallingGlobally": false,
+	"git.openRepositoryInParentFolders": "always",
+	"diffEditor.renderSideBySide": true,
+	"githubIssues.issueBranchTitle": "${issueNumber}-${sanitizedLowercaseIssueTitle}",
+	"githubIssues.workingBaseBranch": "prompt",
+	"redhat.telemetry.enabled": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"security.allowedUNCHosts": ["wsl.localhost"],
+	"remote.autoForwardPortsSource": "hybrid",
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/": true,
+		"https://biomejs.dev": true,
+		"https://raw.githubusercontent.com/microsoft/vscode/": true,
+		"https://raw.githubusercontent.com/devcontainers/spec/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://developer.microsoft.com/json-schemas/": true
+	},
+	"chat.mcp.gallery.enabled": true,
+	"claudeCode.preferredLocation": "sidebar",
+	"claudeCode.hideOnboarding": true,
+	"claudeCode.environmentVariables": [
+		{
+			"name": "ANTHROPIC_BASE_URL",
+			"value": "https://api.portkey.ai"
+		},
+		{
+			"name": "ANTHROPIC_AUTH_TOKEN",
+			"value": "dummy"
+		},
+		{
+			"name": "ANTHROPIC_CUSTOM_HEADERS",
+			"value": ""
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+			"value": "@vertexai-global/anthropic.claude-sonnet-4-5@20250929"
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+			"value": "@vertexai-global/anthropic.claude-opus-4-1@20250805"
+		},
+		{
+			"name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+			"value": "@vertexai-global/anthropic.claude-haiku-4-5@20251001}"
+		}
+	],
+	"[html]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"[svg]": {
+		"editor.defaultFormatter": "jock.svg"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascript]": {
+		"editor.maxTokenizationLineLength": 2500
+	},
+	"[python]": {
+		"editor.formatOnType": true
+	},
+	"python.defaultInterpreterPath": "c:\\Python313\\python.exe",
+	"python.analysis.typeCheckingMode": "standard",
+	"clang-format.executable": "/usr/bin/clang-format-14"
 }
