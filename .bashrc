@@ -32,7 +32,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 CLICOLOR=1
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[38;2;131;165;152m\]\w\[\033[00m\]\$ '
 if command -v dircolors >/dev/null 2>&1; then
     eval "$(dircolors)"
 fi
