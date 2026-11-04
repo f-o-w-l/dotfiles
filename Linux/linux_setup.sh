@@ -19,6 +19,16 @@ export CODE_USER_FOLDER="$DOTFILES/Code/Linux_User_Folder"
 # Install eza
 sudo ./Linux/install_eza.sh
 
+# Install eza theme (gruvbox-dark)
+EZA_THEMES="$HOME/.local/share/eza-themes"
+if [ -d "$EZA_THEMES/.git" ]; then
+    git -C "$EZA_THEMES" pull --ff-only
+else
+    git clone https://github.com/eza-community/eza-themes.git "$EZA_THEMES"
+fi
+mkdir -p "$HOME/.config/eza"
+ln -sf "$EZA_THEMES/themes/gruvbox-dark.yml" "$HOME/.config/eza/theme.yml"
+
 # Install delta
 sudo ./Linux/install_delta.sh
 
